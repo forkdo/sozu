@@ -1,0 +1,42 @@
+site_name: Sozu Documentation
+repo_url: https://github.com/forkdo/sozu.git
+repo_name: forkdo/sozu
+
+theme:
+  name: material
+
+docs_dir: doc
+
+nav:
+  - English Documentation:
+    - 'Overview': 'overview.md'
+    - 'Getting Started': 'getting_started.md'
+    - 'How to use': 'how_to_use.md'
+    - 'CLI Configuration': 'configure_cli.md'
+    - 'CLI Configuration Example': 'cli_configuration_example.md'
+    - 'Architecture': 'architecture.md'
+    - 'Design Motivation': 'design_motivation.md'
+    - 'Benchmark': 'benchmark.md'
+    - 'Debugging Strategies': 'debugging_strategies.md'
+    - 'Lexicon': 'lexicon.md'
+    - 'Lifetime of a session': 'lifetime_of_a_session.md'
+    - 'Recipes': 'recipes.md'
+    - 'Tools and Libraries': 'tools_libraries.md'
+    - 'Why you should use Sozu': 'why_you_should_use.md'
+    - 'Main README': 'README.md'
+  - Chinese Documentation:
+    - '概述': 'overview_zh.md'
+    - '入门': 'getting_started_zh.md'
+    - '如何使用': 'how_to_use_zh.md'
+    - 'CLI 配置': 'configure_cli_zh.md'
+    - 'CLI 配置示例': 'cli_configuration_example_zh.md'
+    - '架构': 'architecture_zh.md'
+    - '设计动机': 'design_motivation_zh.md'
+    - '基准测试': 'benchmark_zh.md'
+    - '调试策略': 'debugging_strategies_zh.md'
+    - '词汇表': 'lexicon_zh.md'
+    - '会话生命周期': 'lifetime_of_a_session_zh.md'
+    - '配方': 'recipes_zh.md'
+    - '工具和库': 'tools_libraries_zh.md'
+    - '为何使用 Sozu': 'why_you_should_use_zh.md'
+    - '主 README': 'README_zh.md'
