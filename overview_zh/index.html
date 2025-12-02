@@ -1,0 +1,2342 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../getting_started_zh/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>概述 - Sozu Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sozu" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sozu Documentation" class="md-header__button md-logo" aria-label="Sozu Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sozu Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              概述
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/forkdo/sozu.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forkdo/sozu
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sozu Documentation" class="md-nav__button md-logo" aria-label="Sozu Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sozu Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/forkdo/sozu.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forkdo/sozu
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Configuration Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_motivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Motivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging_strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Strategies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexicon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lexicon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifetime_of_a_session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifetime of a session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_you_should_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why you should use Sozu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chinese Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chinese Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        简介
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Rust 环境设置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sozu 安装
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Sozu 安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cargo-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 通过 cargo install 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 从源代码构建
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 如何使用 Sozu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 如何使用 Sozu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 运行 Sozu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 使用 Docker 运行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-systemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Systemd 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sozu 配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sozu 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-configtoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 配置文件 (config.toml) 结构概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 全局参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 监听器 (Listeners)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 集群 (Clusters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 指标 (Metrics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 PROXY 协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 动态后端管理（服务发现）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 动态后端管理（服务发现）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 启动 Sozu 以接受命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-docker-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 查找 Docker 容器的 IP 地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 动态添加后端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 动态移除后端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 查看 Sōzu 工作进程状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 自动化脚本（概念）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 查看动态添加的前端和后端
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure_cli_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI 配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration_example_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI 配置示例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_motivation_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设计动机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基准测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging_strategies_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexicon_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    词汇表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifetime_of_a_session_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    会话生命周期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_libraries_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具和库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_you_should_use_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    为何使用 Sozu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主 README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        简介
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Rust 环境设置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sozu 安装
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Sozu 安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cargo-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 通过 cargo install 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 从源代码构建
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 如何使用 Sozu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 如何使用 Sozu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 运行 Sozu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 使用 Docker 运行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-systemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Systemd 集成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sozu 配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sozu 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-configtoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 配置文件 (config.toml) 结构概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 全局参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 监听器 (Listeners)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 集群 (Clusters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 指标 (Metrics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 PROXY 协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 动态后端管理（服务发现）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 动态后端管理（服务发现）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 启动 Sozu 以接受命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-docker-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 查找 Docker 容器的 IP 地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 动态添加后端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 动态移除后端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-sozu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 查看 Sōzu 工作进程状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 自动化脚本（概念）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 查看动态添加的前端和后端
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sozu">Sozu 中文使用教程</h1>
+<h2 id="_1">简介</h2>
+<p>Sozu 是一个快速、可靠且可编程的 HTTP 和 TCP 反向代理，由 Rust 编写。它支持高级路由、负载均衡、TLS 终止和动态配置。</p>
+<h2 id="1-rust">1. Rust 环境设置</h2>
+<p>在安装 Sozu 之前，请确保您的系统上安装了最新稳定版的 Rust。我们推荐使用 <code>rustup</code> 进行安装：</p>
+<ul>
+<li><strong>安装 <code>rustup</code></strong>: 访问 <a href="https://rustup.rs">rustup 官方网站</a> 或在终端运行以下命令：</li>
+</ul>
+<pre><code class="language-bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<ul>
+<li>
+<p><strong>配置环境</strong>: 按照安装程序的指示操作，通常需要执行 <code>source $HOME/.cargo/env</code> 来将 <code>cargo</code> (Rust 的包管理器) 添加到您的 PATH 中。</p>
+</li>
+<li>
+<p><strong>验证安装</strong>: 运行 <code>rustc --version</code> 和 <code>cargo --version</code> 来验证 Rust 是否成功安装。</p>
+</li>
+</ul>
+<h2 id="2-sozu">2. Sozu 安装</h2>
+<p>您可以选择通过 <code>cargo install</code> 从 crates.io 安装 Sozu，或者从源代码构建。</p>
+<h3 id="21-cargo-install">2.1 通过 <code>cargo install</code> 安装</h3>
+<p>Sozu 发布在 <a href="https://crates.io/">crates.io</a> 上。安装非常简单：</p>
+<pre><code class="language-bash">cargo install sozu
+</code></pre>
+<p>安装完成后，<code>sozu</code> 可执行文件将在您的 <code>~/.cargo/bin</code> 目录中可用。</p>
+<h3 id="22">2.2 从源代码构建</h3>
+<p>如果您想从源代码构建 Sozu (例如，进行开发或使用最新版本)，请遵循以下步骤：</p>
+<ul>
+<li><strong>克隆仓库</strong>: 如果您尚未克隆 Sozu 仓库，请先克隆它：</li>
+</ul>
+<pre><code class="language-bash">git clone https://github.com/sozu-proxy/sozu.git
+cd sozu
+</code></pre>
+<ul>
+<li><strong>构建</strong>: 导航到 <code>bin</code> 目录并使用 <code>cargo build</code> 命令构建。为了获得生产版本，请务必使用 <code>--release</code> 标志以启用优化：</li>
+</ul>
+<pre><code class="language-bash">cd bin
+cargo build --release --locked
+</code></pre>
+<ul>
+<li><code>--release</code> 参数会告知 Cargo 启用编译优化，生成性能更好的二进制文件。仅在构建生产版本时使用。</li>
+<li><code>--locked</code> 标志会强制 Cargo 遵守 <code>Cargo.lock</code> 中指定的依赖版本，从而防止依赖中断。</li>
+</ul>
+<p>构建完成后，可执行文件将在 <code>target/release/sozu</code> 路径下。</p>
+<h2 id="3-sozu">3. 如何使用 Sozu</h2>
+<p>Sozu 既可以作为独立进程运行，也可以集成到 Docker 容器或 Systemd 服务中。</p>
+<h3 id="31-sozu">3.1 运行 Sozu</h3>
+<ul>
+<li><strong>通过 <code>cargo install</code> 方式安装</strong>: 如果您通过 <code>cargo install</code> 安装了 Sozu，那么 <code>sozu</code> 命令应该已经在您的 <code>$PATH</code> 中。</li>
+</ul>
+<pre><code class="language-bash">sozu start -c &lt;您的/config.toml/路径&gt;
+</code></pre>
+<ul>
+<li><strong>从源代码构建</strong>: 如果您从源代码构建，Sozu 可执行文件位于 <code>target/release</code> 目录中。</li>
+</ul>
+<pre><code class="language-bash">./target/release/sozu start -c &lt;您的/config.toml/路径&gt;
+</code></pre>
+<p>您可以在 <code>config.toml</code> 文件中编辑反向代理的配置，声明新的集群、前端和后端。</p>
+<p><strong>提示</strong>: 您可以使用 <code>sozu</code> 二进制文件作为 CLI 与反向代理进行交互。更多信息请参阅<a href="https://github.com/sozu-proxy/sozu/blob/main/doc/configure_cli_zh.md">命令行文档</a>。</p>
+<h3 id="32-docker">3.2 使用 Docker 运行</h3>
+<p>Sozu 仓库提供了一个基于 <code>alpine:edge</code> 的多阶段 <code>Dockerfile</code> 镜像。</p>
+<ul>
+<li><strong>构建 Docker 镜像</strong>:</li>
+</ul>
+<pre><code class="language-bash">docker build -t sozu .
+</code></pre>
+<pre><code>您也可以构建特定 Alpine 版本的镜像：
+</code></pre>
+<pre><code class="language-bash">docker build --build-arg ALPINE_VERSION=3.14 -t sozu:main-alpine-3.14 .
+</code></pre>
+<ul>
+<li><strong>运行 Docker 容器</strong>:</li>
+</ul>
+<pre><code class="language-bash">docker run \
+  --ulimit nofile=262144:262144 \
+  --name sozu-proxy \
+  -v /run/sozu:/run/sozu \
+  -v /path/to/your/config.toml:/etc/sozu/config.toml \
+  -v /my/state/:/var/lib/sozu \
+  -p 8080:80 \
+  -p 8443:443 \
+  sozu start -c /etc/sozu/config.toml
+</code></pre>
+<ul>
+<li><code>-v /path/to/your/config.toml:/etc/sozu/config.toml</code>: 将您的自定义 <code>config.toml</code> 文件挂载到容器中。</li>
+<li><code>-v /my/state/:/var/lib/sozu</code>: 如果您有初始配置状态 JSON 文件，请将其挂载到容器中。</li>
+</ul>
+<h3 id="33-systemd">3.3 Systemd 集成</h3>
+<p>Sozu 仓库提供了 Systemd 单元文件，可以轻松地将其作为服务运行。</p>
+<ul>
+<li><strong>复制单元文件</strong>: 将 <code>sozu/os-build/systemd/sozu.service</code> 复制到 <code>/etc/systemd/system/</code> 目录：</li>
+</ul>
+<pre><code class="language-bash">sudo cp sozu/os-build/systemd/sozu.service /etc/systemd/system/
+</code></pre>
+<ul>
+<li><strong>重新加载 Systemd</strong>:</li>
+</ul>
+<pre><code class="language-bash">sudo systemctl daemon-reload
+</code></pre>
+<ul>
+<li><strong>启动服务</strong>:</li>
+</ul>
+<pre><code class="language-bash">sudo systemctl start sozu.service
+</code></pre>
+<ul>
+<li><strong>开机自启</strong>:</li>
+</ul>
+<pre><code class="language-bash">sudo systemctl enable sozu.service
+</code></pre>
+<h2 id="4-sozu">4. Sozu 配置</h2>
+<p>Sozu 的核心配置通过 <code>config.toml</code> 文件进行。它包含三个主要部分：<code>global</code> 参数、协议定义 (如 <code>https</code>, <code>http</code>, <code>tcp</code>) 和 <code>clusters</code> 部分。</p>
+<h3 id="41-configtoml">4.1 配置文件 (<code>config.toml</code>) 结构概述</h3>
+<p>Sozu 配置文件的示例如下：</p>
+<pre><code class="language-toml"># 全局参数
+command_socket = &quot;./command_folder/sock&quot;
+saved_state = &quot;./state.json&quot;
+log_level = &quot;info&quot;
+log_target = &quot;stdout&quot;
+worker_count = 2
+handle_process_affinity = false
+max_connections = 500
+buffer_size = 16384
+activate_listeners = true
+
+# 监听器配置
+[[listeners]]
+protocol = &quot;http&quot;
+address = &quot;0.0.0.0:8080&quot;
+# public_address = &quot;1.2.3.4:80&quot; # 用于日志和转发头
+# expect_proxy = false # 期望 PROXY 协议头
+
+# HTTPS 监听器示例
+[[listeners]]
+protocol = &quot;https&quot;
+address = &quot;0.0.0.0:8443&quot;
+certificate = &quot;/path/to/certificate.pem&quot;
+key = &quot;/path/to/key.pem&quot;
+certificate_chain = &quot;/path/to/certificate_chain.pem&quot;
+# tls_versions = [&quot;TLS_V12&quot;, &quot;TLS_V13&quot;]
+# answer_404 = &quot;/path/to/my-404-answer.http&quot; # 自定义错误页面
+
+# 集群配置
+[clusters]
+[clusters.MyWebsiteCluster]
+protocol = &quot;http&quot; # https 代理也使用 http 协议
+# load_balancing_policy=&quot;roundrobin&quot; # 负载均衡策略: &quot;roundrobin&quot; (默认) 或 &quot;random&quot;
+# https_redirect = true # 强制将 http 流量重定向到 https
+
+frontends = [
+  { address = &quot;0.0.0.0:8080&quot;, hostname = &quot;your_domain.com&quot; },
+  # 对于 HTTPS 前端，还需要指定证书和密钥
+  { address = &quot;0.0.0.0:8443&quot;, hostname = &quot;your_domain.com&quot;, certificate = &quot;/path/to/certificate.pem&quot;, key = &quot;/path/to/key.pem&quot;, certificate_chain = &quot;/path/to/certificate_chain.pem&quot; }
+]
+backends  = [
+  { address = &quot;127.0.0.1:8000&quot; }, # 后端服务器地址
+  { address = &quot;127.0.0.1:8001&quot; }
+]
+
+# 指标配置
+[metrics]
+address = &quot;127.0.0.1:8125&quot;
+# tagged_metrics = false
+# prefix = &quot;sozu&quot;
+</code></pre>
+<h3 id="42">4.2 全局参数</h3>
+<p>全局参数在 <code>[global]</code> 部分设置，影响主进程和工作进程：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>可选值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>saved_state</code></td>
+<td>Sozu 启动时尝试加载状态的路径</td>
+<td></td>
+</tr>
+<tr>
+<td><code>log_level</code></td>
+<td>日志级别</td>
+<td><code>debug</code>, <code>trace</code>, <code>error</code>, <code>warn</code>, <code>info</code></td>
+</tr>
+<tr>
+<td><code>log_target</code></td>
+<td>日志输出目标</td>
+<td><code>stdout</code>, <code>tcp</code> 或 <code>udp</code> 地址</td>
+</tr>
+<tr>
+<td><code>access_logs_target</code></td>
+<td>访问日志输出目标 (如果激活)</td>
+<td><code>stdout</code>, <code>tcp</code> 或 <code>udp</code> 地址</td>
+</tr>
+<tr>
+<td><code>command_socket</code></td>
+<td>Unix 命令套接字路径</td>
+<td></td>
+</tr>
+<tr>
+<td><code>worker_count</code></td>
+<td>工作进程数量</td>
+<td></td>
+</tr>
+<tr>
+<td><code>handle_process_affinity</code></td>
+<td>将工作进程绑定到 CPU 核心</td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>max_connections</code></td>
+<td>最大并发连接数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>buffer_size</code></td>
+<td>工作进程使用的请求缓冲区大小 (字节)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activate_listeners</code></td>
+<td>自动启动监听器</td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>front_timeout</code></td>
+<td>前端 socket 最大非活动时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>connect_timeout</code></td>
+<td>连接请求的最大非活动时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>request_timeout</code></td>
+<td>请求的最大非活动时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zombie_check_interval</code></td>
+<td>检查僵尸会话的间隔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pid_file_path</code></td>
+<td>存储 PID 的文件路径</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-listeners">4.3 监听器 (Listeners)</h3>
+<p><code>[[listeners]]</code> 部分定义了一组接受客户端连接的监听套接字。您可以定义任意数量的监听器。</p>
+<ul>
+<li><strong>通用参数</strong>:</li>
+</ul>
+<pre><code class="language-toml">[[listeners]]
+protocol = &quot;http&quot; # 或 &quot;https&quot;, &quot;tcp&quot;
+address = &quot;0.0.0.0:8080&quot;
+# public_address = &quot;1.2.3.4:80&quot; # 可选，用于日志和转发头
+# expect_proxy = true # 可选，配置客户端套接字接收 PROXY 协议头
+</code></pre>
+<ul>
+<li><strong>HTTP 和 HTTPS 监听器特定选项 (自定义错误页面)</strong>:
+        您可以为 HTTP 和 HTTPS 监听器定义自定义响应，如 404 Not Found, 503 Service Unavailable 等。这些响应可以是纯文本文件，其中包含 HTML 和一些模板变量 (如 <code>%REQUEST_ID%</code>)。</li>
+</ul>
+<pre><code class="language-toml"># 当 Sozu 不知晓所请求的域名或路径时发送 404 响应
+answer_404 = &quot;/path/to/my-404-answer.http&quot;
+# 当没有可用的后端服务器时发送 503 响应
+answer_503 = &quot;/path/to/my-503-answer.http&quot;
+</code></pre>
+<ul>
+<li><strong>HTTPS 监听器特定选项</strong>:</li>
+</ul>
+<pre><code class="language-toml"># 支持的 TLS 版本。可选值:&quot;SSL_V2&quot;, &quot;SSL_V3&quot;, &quot;TLS_V12&quot;, &quot;TLS_V13&quot;。默认为 &quot;TLS_V12&quot; 和 &quot;TLS_V13&quot;。
+ tls_versions = [&quot;TLS_V12&quot;, &quot;TLS_V13&quot;]
+# 定义 sticky session cookie 的名称，如果集群激活了 sticky_session。默认为 &quot;SOZUBALANCEID&quot;。
+sticky_name = &quot;SOZUBALANCEID&quot;
+</code></pre>
+<p>基于 Rustls 的 HTTPS 监听器特定选项：</p>
+<pre><code class="language-toml">cipher_list = [
+    # TLS 1.3 密码套件
+    &quot;TLS13_AES_256_GCM_SHA384&quot;,
+    # ... 其他密码套件
+]
+</code></pre>
+<h3 id="44-clusters">4.4 集群 (Clusters)</h3>
+<p>在 <code>[clusters]</code> 部分声明您的集群列表：</p>
+<pre><code class="language-toml">[clusters]
+[clusters.MyWebsiteCluster]
+protocol = &quot;http&quot; # 或 &quot;tcp&quot;。HTTPS 代理也使用 http 协议
+# load_balancing_policy=&quot;roundrobin&quot; # 负载均衡策略: &quot;roundrobin&quot; (默认) 或 &quot;random&quot;
+# https_redirect = true # 强制将 http 流量重定向到 https
+# sticky_session = true # 可选，启用 sticky session
+
+frontends = [
+  { address = &quot;0.0.0.0:8080&quot;, hostname = &quot;your_domain.com&quot; },
+  # 对于 HTTPS 前端，还需要指定证书和密钥
+  { address = &quot;0.0.0.0:8443&quot;, hostname = &quot;your_domain.com&quot;, certificate = &quot;/path/to/certificate.pem&quot;, key = &quot;/path/to/key.pem&quot;, certificate_chain = &quot;/path/to/certificate_chain.pem&quot; }
+]
+backs  = [
+  { address = &quot;127.0.0.1:8000&quot; }, # 后端服务器地址
+  { address = &quot;127.0.0.1:8001&quot; }
+]
+</code></pre>
+<h3 id="45-metrics">4.5 指标 (Metrics)</h3>
+<p>Sozu 通过 UDP 套接字向其他网络组件报告其状态，并实现了 <code>statsd</code> 协议。</p>
+<p>配置方式：</p>
+<pre><code class="language-toml">[metrics]
+address = &quot;127.0.0.1:8125&quot; # statsd 服务的地址和端口
+# tagged_metrics = false # 使用 InfluxDB 的 statsd 协议以添加标签
+# prefix = &quot;sozu&quot; # 指标键前缀
+</code></pre>
+<h3 id="46-proxy">4.6 PROXY 协议</h3>
+<p>PROXY 协议用于在代理链中传递客户端的真实 IP 地址和端口信息。Sozu 支持 PROXY 协议版本 2。</p>
+<ul>
+<li><strong>配置 Sozu 期望 PROXY 协议头</strong>:</li>
+</ul>
+<pre><code class="language-toml">[[listeners]]
+address = &quot;0.0.0.0:80&quot;
+expect_proxy = true
+</code></pre>
+<p>这使得客户端连接在读取任何数据之前先接收 PROXY 协议头。</p>
+<ul>
+<li><strong>配置 Sozu 向后端发送 PROXY 协议头</strong>:</li>
+</ul>
+<pre><code class="language-toml">[[listeners]]
+address = &quot;0.0.0.0:81&quot;
+
+[clusters]
+[clusters.NameOfYourTcpCluster]
+send_proxy = true
+frontends = [
+  { address = &quot;0.0.0.0:81&quot; }
+]
+</code></pre>
+<p><strong>注意</strong>: 仅适用于 TCP 集群 (HTTP 和 HTTPS 代理将使用转发头)。</p>
+<ul>
+<li><strong>配置 Sozu 转发 PROXY 协议头</strong>:</li>
+</ul>
+<pre><code class="language-toml">[[listeners]]
+address = &quot;0.0.0.0:80&quot;
+expect_proxy = true
+
+[clusters]
+[clusters.NameOfYourCluster]
+send_proxy = true
+frontends = [
+  { address = &quot;0.0.0.0:80&quot; }
+]
+</code></pre>
+<p>Sozu 将接收客户端连接的 PROXY 协议头，验证其有效性，然后将其转发给上游后端。这允许代理链在不丢失客户端连接信息的情况下工作。</p>
+<p><strong>注意</strong>: 仅适用于 TCP 集群。</p>
+<h2 id="5">5. 动态后端管理（服务发现）</h2>
+<p>在 Docker 等动态环境中，后端服务的 IP 地址可能会频繁变化。尽管 <code>config.toml</code> 在 Sozu 启动时解析 IP 地址，但您可以使用 Sozu 提供的命令行工具（CLI）来<strong>动态地添加、更新或移除后端</strong>，而无需重启 Sozu。</p>
+<p>这个过程需要一个外部机制（例如一个简单的脚本、服务发现工具或自定义程序）来：</p>
+<ul>
+<li><strong>监控</strong>您的后端服务（例如，通过 Docker API 监听容器的启动/停止事件，或者查询 Docker 的内置 DNS 服务）。</li>
+<li><strong>获取</strong>后端服务的当前 IP 地址和端口。</li>
+<li><strong>使用 <code>sozu</code> CLI 工具</strong>向运行中的 Sozu 实例发送命令。</li>
+</ul>
+<p>以下是使用 <code>sozu</code> CLI 管理后端的示例：</p>
+<h3 id="51-sozu">5.1 启动 Sozu 以接受命令</h3>
+<p>确保您的 <code>config.toml</code> 中 <code>command_socket</code> 配置正确，以便 CLI 工具可以连接到运行中的 Sozu 实例。例如：</p>
+<pre><code class="language-toml">command_socket = &quot;/var/lib/sozu/command.sock&quot;
+</code></pre>
+<h3 id="52-docker-ip">5.2 查找 Docker 容器的 IP 地址</h3>
+<p>假设您的 Docker 网络名为 <code>my-network</code>，后端服务名为 <code>my-backend-app</code>，您可以使用 <code>docker inspect</code> 命令来获取其 IP 地址。</p>
+<pre><code class="language-bash"># 获取单个运行中容器的 IP 地址
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-backend-app
+
+# 假设您的后端服务暴露在 8080 端口
+export BACKEND_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-backend-app)
+export BACKEND_PORT=8080
+export BACKEND_ADDRESS=&quot;${BACKEND_IP}:${BACKEND_PORT}&quot;
+</code></pre>
+<p>在 <code>docker-compose</code> 环境中，如果服务在同一个 <code>user-defined bridge network</code> 下，服务名通常可以直接作为主机名解析。但在 sozu 启动时解析 IP 的情况下，您仍然需要先获取 IP。</p>
+<h3 id="53">5.3 动态添加后端</h3>
+<p>使用 <code>sozu backend add</code> 命令将新的后端添加到指定的集群。</p>
+<pre><code class="language-bash"># 假设您的 Sozu 配置文件路径是 /etc/sozu/config.toml
+# 并且该配置文件中已经设置了 command_socket
+# 假设您的集群 ID 是 'komo'
+CONFIG_PATH=&quot;/etc/sozu/config.toml&quot;
+CLUSTER_ID=&quot;komo&quot;
+NEW_BACKEND_ID=&quot;backend-1&quot; # 为新后端提供一个唯一的ID
+NEW_BACKEND_ADDRESS=&quot;172.17.0.5:9120&quot; # 替换为您的后端实际 IP:端口
+
+sozu --config &quot;${CONFIG_PATH}&quot; backend add --id &quot;${CLUSTER_ID}&quot; --backend-id &quot;${NEW_BACKEND_ID}&quot; --address &quot;${NEW_BACKEND_ADDRESS}&quot;
+</code></pre>
+<ul>
+<li><code>--config</code>: 指定 Sozu 配置文件的路径，其中应包含 <code>command_socket</code> 的路径。</li>
+<li><code>backend add</code>: 表示要执行添加后端的操作。</li>
+<li><code>--id</code>: 指定要添加后端的集群 ID。</li>
+<li><code>--backend-id</code>: 为此后端实例提供一个唯一的标识符。</li>
+<li><code>--address</code>: 指定后端服务器的 IP 地址和端口。</li>
+</ul>
+<h3 id="54">5.4 动态移除后端</h3>
+<p>使用 <code>sozu backend remove</code> 命令从指定的集群中移除后端。</p>
+<pre><code class="language-bash"># 假设您的 Sozu 配置文件路径是 /etc/sozu/config.toml
+CONFIG_PATH=&quot;/etc/sozu/config.toml&quot;
+CLUSTER_ID=&quot;komo&quot;
+OLD_BACKEND_ID=&quot;backend-1&quot; # 要移除的后端的ID
+OLD_BACKEND_ADDRESS=&quot;172.17.0.5:9120&quot; # 替换为要移除的后端实际 IP:端口
+
+sozu --config &quot;${CONFIG_PATH}&quot; backend remove --id &quot;${CLUSTER_ID}&quot; --backend-id &quot;${OLD_BACKEND_ID}&quot; --address &quot;${OLD_BACKEND_ADDRESS}&quot;
+</code></pre>
+<ul>
+<li><code>--config</code>: 指定 Sozu 配置文件的路径。</li>
+<li><code>backend remove</code>: 表示要执行移除后端的操作。</li>
+<li><code>--id</code>: 指定要移除后端的集群 ID。</li>
+<li><code>--backend-id</code>: 要移除的后端的ID。</li>
+<li><code>--address</code>: 要移除的后端服务器的 IP 地址和端口。</li>
+</ul>
+<h3 id="55-sozu">5.5 查看 Sōzu 工作进程状态</h3>
+<p>您可以使用 <code>sozu status</code> 命令来查看 Sōzu 工作进程（workers）的运行状态。</p>
+<pre><code class="language-bash"># 假设您的 Sozu 配置文件路径是 /etc/sozu/config.toml
+CONFIG_PATH=&quot;/etc/sozu/config.toml&quot;
+sozu --config &quot;${CONFIG_PATH}&quot; status --json
+</code></pre>
+<p>这将返回一个 JSON 格式的当前工作进程状态。要查看详细的集群、前端和后端配置，请参阅下一节。</p>
+<h3 id="56">5.6 自动化脚本（概念）</h3>
+<p>要实现真正的服务发现，您需要编写一个持续运行的脚本（例如使用 Python、Bash 或 Go），该脚本：</p>
+<ul>
+<li><strong>周期性</strong>地或通过 <strong>事件监听</strong> Docker API 来检测后端容器的变化。</li>
+<li><strong>比较</strong>当前 Sozu 中的后端列表与 Docker 中实际运行的后端列表。</li>
+<li><strong>执行</strong> <code>sozu backend add</code> 或 <code>sozu backend remove</code> 命令来同步这两个列表。</li>
+</ul>
+<p>这个脚本将作为您服务发现方案中的“控制平面”。</p>
+<h3 id="57">5.7 查看动态添加的前端和后端</h3>
+<p>当您通过命令行动态添加了 <code>frontend</code> 或 <code>backend</code> 后，您可能想验证它们是否已成功加载。Sōzu 的路由结构是 <code>frontend</code> -&gt; <code>cluster</code> -&gt; <code>backend</code>。您可以通过以下两步来追踪和查看这些动态添加的数据：</p>
+<ul>
+<li>
+<p><strong>查找 <code>frontend</code> 对应的 <code>cluster ID</code></strong></p>
+<p>使用 <code>sozu frontend list --json</code> 命令可以列出所有已配置的前端。在返回的 JSON 数据中，找到您关心的 <code>frontend</code>，并记下其所属的 <code>cluster_id</code>。</p>
+</li>
+</ul>
+<pre><code class="language-bash"># 将 &lt;您的/config.toml/路径&gt; 替换为您的配置文件路径
+sozu --config &lt;您的/config.toml/路径&gt; frontend list --json
+</code></pre>
+<ul>
+<li>
+<p><strong>根据 <code>cluster ID</code> 查找其包含的 <code>backend</code></strong></p>
+<p>获取到 <code>cluster ID</code> 后，使用 <code>sozu cluster list --id &lt;CLUSTER_ID&gt; --json</code> 命令来查看该特定集群的详细信息，其中包括了它所包含的所有 <code>backend</code> 列表。</p>
+</li>
+</ul>
+<pre><code class="language-bash"># 替换 &lt;您的/config.toml/路径&gt; 和 &lt;您的_CLUSTER_ID&gt;
+sozu --config &lt;您的/config.toml/路径&gt; cluster list --id &lt;您的_CLUSTER_ID&gt; --json
+</code></pre>
+<p>通过这个两步流程，您可以清晰地看到从 <code>frontend</code> 到 <code>backend</code> 的完整映射关系，并确认您的动态配置已生效。</p>
+<p>希望这份教程能帮助您更好地理解和使用 Sozu！</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

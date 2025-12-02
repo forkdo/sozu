@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>配置 Sōzu - Sozu Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sozu" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sozu Documentation" class="md-header__button md-logo" aria-label="Sozu Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sozu Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              配置 Sōzu
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/forkdo/sozu.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forkdo/sozu
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sozu Documentation" class="md-nav__button md-logo" aria-label="Sozu Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sozu Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/forkdo/sozu.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forkdo/sozu
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Configuration Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_motivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Motivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging_strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Strategies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexicon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lexicon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifetime_of_a_session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifetime of a session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_you_should_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why you should use Sozu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chinese Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chinese Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure_cli_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI 配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration_example_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI 配置示例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_motivation_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设计动机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基准测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging_strategies_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexicon_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    词汇表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifetime_of_a_session_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    会话生命周期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_libraries_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具和库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_you_should_use_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    为何使用 Sozu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主 README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全局参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        监听器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="监听器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 和 HTTPS 监听器特有选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS 监听器特有选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rustls-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 Rustls 的 HTTPS 监听器特有选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        集群
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        外部服务示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROXY 协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PROXY 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sozu-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置 Sōzu 期望 PROXY 协议头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sozu-proxy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置 Sōzu 向 上游后端 发送 PROXY 协议头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sozu-proxy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置 Sōzu 向 上游 中继 PROXY 协议头
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sozu">配置 Sōzu</h1>
+<blockquote>
+<p>在深入了解代理的配置部分之前，如果您还没有阅读过 <a href="../getting_started/">入门文档</a>，您应该先看一下。</p>
+</blockquote>
+<h2 id="_1">配置文件</h2>
+<blockquote>
+<p>配置文件使用 <a href="https://github.com/toml-lang/toml">.toml</a> 格式。</p>
+</blockquote>
+<p>Sōzu 配置过程涉及 3 个主要参数来源：</p>
+<ul>
+<li><code>global</code> 部分，用于设置进程范围的参数。</li>
+<li>协议的定义，如 <code>https</code>、<code>http</code>、<code>tcp</code>。</li>
+<li><code>[clusters]</code> 下的集群部分。</li>
+</ul>
+<h3 id="_2">全局参数</h3>
+<p>全局部分中的参数允许您定义主进程和工作进程共享的全局设置（如日志级别）：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>可能的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>saved_state</code></td>
+<td>sozu 启动时尝试从中加载其状态的路径</td>
+<td></td>
+</tr>
+<tr>
+<td><code>log_level</code></td>
+<td>可能的值是</td>
+<td><code>debug</code>、<code>trace</code>、<code>error</code>、<code>warn</code>、<code>info</code></td>
+</tr>
+<tr>
+<td><code>log_target</code></td>
+<td>可能的值是</td>
+<td><code>stdout, tcp 或 udp 地址</code></td>
+</tr>
+<tr>
+<td><code>access_logs_target</code></td>
+<td>可能的值是（如果激活，则将访问日志发送到单独的目标）</td>
+<td><code>stdout</code>、<code>tcp 或</code>udp 地址`</td>
+</tr>
+<tr>
+<td><code>command_socket</code></td>
+<td>unix 套接字命令的路径</td>
+<td></td>
+</tr>
+<tr>
+<td><code>command_buffer_size</code></td>
+<td>主进程用于处理命令的缓冲区大小（以字节为单位）。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>max_command_buffer_size</code></td>
+<td>主进程用于处理命令的缓冲区的最大大小。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>worker_count</code></td>
+<td>工作进程数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>worker_automatic_restart</code></td>
+<td>如果激活，出现 panic 或崩溃的工作进程将重新启动（默认激活）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>handle_process_affinity</code></td>
+<td>将工作进程绑定到 cpu 核心。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>max_connections</code></td>
+<td>最大同时/打开连接数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>max_buffers</code></td>
+<td>用于代理的最大缓冲区数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>min_buffers</code></td>
+<td>为代理预分配的最小缓冲区数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>buffer_size</code></td>
+<td>工作进程使用的请求缓冲区大小（以字节为单位）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ctl_command_timeout</code></td>
+<td>命令行等待命令完成的最长时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pid_file_path</code></td>
+<td>将 pid 存储在特定文件位置</td>
+<td></td>
+</tr>
+<tr>
+<td><code>front_timeout</code></td>
+<td>前端套接字的最大不活动时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>connect_timeout</code></td>
+<td>连接请求的最大不活动时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>request_timeout</code></td>
+<td>请求的最大不活动时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zombie_check_interval</code></td>
+<td>僵尸会话检查之间的持续时间</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activate_listeners</code></td>
+<td>自动启动监听器</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>示例：</em></p>
+<pre><code class="language-toml">command_socket = &quot;./command_folder/sock&quot;
+saved_state = &quot;./state.json&quot;
+log_level = &quot;info&quot;
+log_target = &quot;stdout&quot;
+command_buffer_size = 16384
+worker_count = 2
+handle_process_affinity = false
+max_connections = 500
+max_buffers = 500
+buffer_size = 16384
+activate_listeners = true
+</code></pre>
+<h3 id="_3">监听器</h3>
+<p><em>listener</em> 部分描述了一组接受客户端连接的监听套接字。
+您可以定义任意数量的监听器。
+它们遵循以下格式：</p>
+<p><em>通用参数：</em></p>
+<pre><code class="language-toml">[[listeners]]
+# 可能的值是 http、https 或 tcp
+protocol = &quot;http&quot;
+# 监听地址
+address = &quot;0.0.0.0:8080&quot;
+# address = &quot;[::]:8080&quot;
+
+# 为日志和转发的标头指定一个不同于套接字所见的 IP
+# public_address = &quot;1.2.3.4:80
+
+# 配置客户端套接字以接收 PROXY 协议头
+# expect_proxy = false
+</code></pre>
+<h4 id="http-https">HTTP 和 HTTPS 监听器特有选项</h4>
+<p>自 1.0.0 版本以来，Sōzu 允许为 HTTP 和 HTTPS 监听器定义自定义 HTTP 应答。</p>
+<p>这些应答是可定制的：</p>
+<ul>
+<li>301 Moved Permanently</li>
+<li>400 Bad Request</li>
+<li>401 Unauthorized</li>
+<li>404 Not Found</li>
+<li>408 Request Timeout</li>
+<li>413 Payload Too Large</li>
+<li>502 Bad Gateway</li>
+<li>503 Service Unavailable</li>
+<li>504 Gateway Timeout</li>
+<li>507 Insufficient Storage</li>
+</ul>
+<p>这些应答应以任何扩展名的纯文本文件提供（为清晰起见，我们建议使用 <code>.http</code>
+），并且可能如下所示：</p>
+<pre><code class="language-html">HTTP/1.1 404 Not Found
+Cache-Control: no-cache
+Connection: close
+Sozu-Id: %REQUEST_ID
+
+&lt;style&gt;pre{background:#EEE;padding:10px;border:1px solid #AAA;border-radius: 5px;}&lt;/style&gt;
+&lt;h1&gt;404 Not Found&lt;/h1&gt;
+
+&lt;p&gt;在此处插入您的自定义文本，实际上，所有 HTML 都是可更改的，包括 CSS。&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    &quot;route&quot;: &quot;%ROUTE&quot;,
+    &quot;request_id&quot;: &quot;%REQUEST_ID&quot;,
+}
+&lt;/pre&gt;
+&lt;footer&gt;这是 Sozu 的自动应答。&lt;/footer&gt;&quot;,
+</code></pre>
+<p>有许多可用的模板变量，如 <code>REQUEST_ID</code> 或 <code>CLUSTER_ID</code>，
+在生成错误时，代理逻辑将替换它们。</p>
+<p>要创建您自己的自定义 HTTP 应答，我们强烈建议您首先复制 <code>lib/src/protocol/kawa_h1/answers.rs</code>
+中存在的默认应答，然后根据自己的喜好进行更改。为清晰起见，可以随意删除
+默认字符串中的 <code>\r</code> 换行符。
+Sōzu 将解析您的文件并替换您使用的任何换行符。</p>
+<p>然后，为每个监听器提供每个自定义应答的绝对路径。</p>
+<pre><code class="language-toml"># 当 sozu 不知道请求的域或路径时，将发送 404 响应
+answer_404 = &quot;/path/to/my-404-answer.http&quot;
+# 如果没有可用的后端服务器，将发送 503 响应
+answer_503 = &quot;/path/to/my-503-answer.http&quot;
+# answer_507 = ...
+</code></pre>
+<p>如果前端具有 <code>sticky_session</code>，则粘性名称在监听器级别定义。</p>
+<pre><code class="language-toml"># 如果集群激活了 `sticky_session`，则定义粘性会话 cookie 的名称
+# 默认为 &quot;SOZUBALANCEID&quot;
+sticky_name = &quot;SOZUBALANCEID&quot;
+</code></pre>
+<h4 id="https">HTTPS 监听器特有选项</h4>
+<pre><code class="language-toml"># 支持的 TLS 版本。可能的值是 &quot;SSL_V2&quot;、&quot;SSL_V3&quot;、
+# &quot;TLS_V12&quot;、&quot;TLS_V13&quot;。默认为 &quot;TLS_V12&quot; 和 &quot;TLS_V13&quot;
+tls_versions = [&quot;TLS_V12&quot;, &quot;TLS_V13&quot;]
+</code></pre>
+<h4 id="rustls-https">基于 Rustls 的 HTTPS 监听器特有选项</h4>
+<pre><code class="language-toml"># 基于 rustls 的 HTTPS 监听器特有选项
+cipher_list = [
+    # TLS 1.3 密码套件
+    &quot;TLS13_AES_256_GCM_SHA384&quot;,
+    &quot;TLS13_AES_128_GCM_SHA256&quot;,
+    &quot;TLS13_CHACHA20_POLY1305_SHA256&quot;,
+    # TLS 1.2 密码套件
+    &quot;TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384&quot;,
+    &quot;TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256&quot;,
+    &quot;TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256&quot;,
+    &quot;TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384&quot;,
+    &quot;TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256&quot;,
+    &quot;TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256&quot;,
+]
+</code></pre>
+<h3 id="_4">集群</h3>
+<p>您可以在 <code>[clusters]</code> 部分下声明您的 <em>集群</em> 列表。
+它们遵循以下格式：</p>
+<p><em>强制参数：</em></p>
+<pre><code class="language-toml">[clusters]
+
+[clusters.NameOfYourCluster]
+# 可能的值是 http 或 tcp
+# https 代理将在此处使用 http
+protocol = &quot;http&quot;
+
+# 每个集群的负载均衡算法。可能的值是
+# &quot;roundrobin&quot; 和 &quot;random&quot;。默认为 &quot;roundrobin&quot;
+# load_balancing_policy=&quot;roundrobin&quot;
+
+# 强制集群将 http 流量重定向到 https
+# https_redirect = true
+
+frontends = [
+  { address = &quot;0.0.0.0:8080&quot;, hostname = &quot;lolcatho.st&quot; },
+  { address = &quot;0.0.0.0:8443&quot;, hostname = &quot;lolcatho.st&quot;, certificate = &quot;../lib/assets/certificate.pem&quot;, key = &quot;../lib/assets/key.pem&quot;, certificate_chain = &quot;../lib/assets/certificate_chain.pem&quot; }
+]
+# frontends 的附加选项：sticky_session (布尔值)
+
+backends  = [
+  { address = &quot;127.0.0.1:1026&quot; }
+]
+</code></pre>
+<h2 id="_5">指标</h2>
+<p>Sōzu 通过 <code>UDP</code> 套接字将其自身状态报告给另一个网络组件。
+主进程和工作进程负责发送其状态。
+我们实现 <a href="https://github.com/b/statsd_spec">statsd</a> 协议来发送统计信息。
+任何理解 <code>statsd</code> 协议的服务都可以从 Sōzu 收集指标。</p>
+<h3 id="_6">配置指标</h3>
+<p>在您的 <code>config.toml</code> 中，您可以通过添加以下内容来定义外部服务的地址和端口：</p>
+<pre><code class="language-toml">[metrics]
+address = &quot;127.0.0.1:8125&quot;
+# 使用 InfluxDB 的 statsd 协议风格添加标签
+# tagged_metrics = false
+# 指标键前缀
+# prefix = &quot;sozu&quot;
+</code></pre>
+<p>目前，我们无法更改发送消息的频率。</p>
+<h3 id="_7">外部服务示例</h3>
+<ul>
+<li><a href="https://github.com/etsy/statsd">statsd</a></li>
+<li><a href="https://github.com/geal/grad">grad</a></li>
+</ul>
+<h2 id="proxy">PROXY 协议</h2>
+<p>当网络流通过代理时，后端服务器将仅看到代理用作客户端地址的 IP 地址和端口。
+真实的源 IP 地址和端口将仅由代理看到。
+由于此信息对于日志记录、安全等很有用，
+因此开发了 <a href="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt">PROXY 协议</a> 以将其传输到后端服务器。
+使用此协议，在连接到后端服务器后，代理将首先发送一个指示客户端 IP 地址和端口
+以及代理的接收 IP 地址和端口的小标头，然后将发送来自客户端的流。</p>
+<p>Sōzu 支持 <code>PROXY 协议</code> 的 <em>版本 2</em>，有三种配置：</p>
+<ul>
+<li>“发送”协议：Sōzu 在 TCP 代理模式下，将向后端服务器发送标头</li>
+<li>“期望”协议：Sōzu 从代理接收标头，为其自己的日志记录和指标解释它，并在 HTTP 转发标头中使用它</li>
+<li>“中继”协议：Sōzu 在 TCP 代理模式下，可以接收标头，并将其传输到后端服务器</li>
+</ul>
+<p>更多信息请参见：<a href="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt">proxy-protocol spec</a></p>
+<h3 id="sozu-proxy">配置 Sōzu <em>期望</em> PROXY 协议头</h3>
+<p>配置面向客户端的连接以在从套接字读取客户端发送的任何字节之前接收 PROXY 协议头。</p>
+<pre><code class="language-txt">                           发送 PROXY                   期望 PROXY
+                           协议头                       协议头
+    +--------+
+    | 客户端 |             +---------+                   +------------+      +-----------+
+    |        |             | 代理    |                   | Sozu       |      | 上游      |
+    +--------+  ---------&gt; | 服务器  |  ---------------&gt; |            |------| 服务器    |
+   /        /              |         |                   |            |      |           |
+  /________/               +---------+                   +------------+      +-----------+
+</code></pre>
+<p>它受 HTTP、HTTPS 和 TCP 代理支持。</p>
+<p><em>配置：</em></p>
+<pre><code class="language-toml">[[listeners]]
+address = &quot;0.0.0.0:80&quot;
+expect_proxy = true
+</code></pre>
+<h3 id="sozu-proxy_1">配置 Sōzu 向 上游后端 <em>发送</em> PROXY 协议头</h3>
+<p>在与集群中声明的后端建立的任何连接上发送 PROXY 协议头。</p>
+<pre><code class="language-txt">                           发送 PROXY
+    +--------+             协议头
+    | 客户端 |             +---------+
+    |        |             | Sozu    |
+    +--------+  ---------&gt; |         |  ------------&gt; +-------------------+ 
+   /        /              |         |                | 代理/上游       |
+  /________/               +---------+                | 服务器          |
+                                                      |                 |
+                                                      +-----------------+
+</code></pre>
+<p><em>配置：</em></p>
+<pre><code class="language-toml">[[listeners]]
+address = &quot;0.0.0.0:81&quot;
+
+[clusters]
+[clusters.NameOfYourTcpCluster]
+send_proxy = true
+frontends = [
+  { address = &quot;0.0.0.0:81&quot; }
+]
+</code></pre>
+<p>注意：仅适用于 TCP 集群（HTTP 和 HTTPS 代理将使用转发标头）。</p>
+<h3 id="sozu-proxy_2">配置 Sōzu 向 上游 <em>中继</em> PROXY 协议头</h3>
+<p>Sōzu 将从客户端连接接收 PROXY 协议头，检查其有效性，然后将其转发到上游后端。这允许反向代理链在不丢失客户端连接信息的情况下工作。</p>
+<pre><code class="language-txt">                           发送 PROXY                       期望 PROXY               发送 PROXY
+                           协议头                           协议头                   协议头
+    +--------+
+    | 客户端 |             +---------+                      +------------+             +-------------------+
+    |        |             | 代理    |                      | Sozu       |             | 代理/上游         |
+    +--------+  +--------&gt; | 服务器  |  +-----------------&gt; |            | +---------&gt; | 服务器            |
+   /        /              |         |                      |            |             |                   |
+  /________/               +---------+                      +------------+             +-------------------+ 
+</code></pre>
+<p><em>配置：</em></p>
+<p>这仅涉及 TCP 集群（HTTP 和 HTTPS 代理可以直接在期望模式下工作，并将使用转发标头）。</p>
+<pre><code class="language-toml">[[listeners]]
+address = &quot;0.0.0.0:80&quot;
+expect_proxy = true
+
+[clusters]
+
+[clusters.NameOfYourCluster]
+send_proxy = true
+frontends = [
+  { address = &quot;0.0.0.0:80&quot; }
+]
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

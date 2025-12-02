@@ -1,0 +1,2082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../benchmark_zh/">
+      
+      
+        <link rel="next" href="../lexicon_zh/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>调试策略 - Sozu Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sozu" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sozu Documentation" class="md-header__button md-logo" aria-label="Sozu Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sozu Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              调试策略
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/forkdo/sozu.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forkdo/sozu
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sozu Documentation" class="md-nav__button md-logo" aria-label="Sozu Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sozu Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/forkdo/sozu.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forkdo/sozu
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Configuration Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_motivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Motivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging_strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Strategies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexicon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lexicon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifetime_of_a_session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifetime of a session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_you_should_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why you should use Sozu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chinese Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chinese Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure_cli_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI 配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration_example_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI 配置示例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_motivation_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设计动机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基准测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试策略
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        收集信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="收集信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sozu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通过 sozu 命令行转储状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日志记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        要关注的图表和指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="要关注的图表和指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪有效流量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="跟踪有效流量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 状态指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        传输的数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        响应时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪失败的请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可伸缩性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS 特定信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典错误场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典错误场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        路由问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        后端服务器不可用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        僵尸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无效的会话关闭
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接受队列填满
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发期间
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开发期间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexicon_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    词汇表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifetime_of_a_session_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    会话生命周期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_libraries_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具和库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_you_should_use_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    为何使用 Sozu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README_zh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主 README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        收集信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="收集信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sozu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通过 sozu 命令行转储状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日志记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        要关注的图表和指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="要关注的图表和指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪有效流量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="跟踪有效流量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 状态指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        传输的数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        响应时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪失败的请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可伸缩性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS 特定信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典错误场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典错误场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        路由问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        后端服务器不可用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        僵尸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无效的会话关闭
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接受队列填满
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发期间
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开发期间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跟踪指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sozu">如何调试 sozu</h1>
+<p>Sozu 提供日志和指标，可以检测大多数生产问题。</p>
+<h2 id="_1">收集信息</h2>
+<h3 id="sozu_1">通过 sozu 命令行转储状态</h3>
+<p>在生产系统中收集有关配置状态的信息非常有用。
+以下是一些可用于获取当前状态快照的命令：</p>
+<pre><code class="language-bash">sozu -c /etc/config.toml status&quot;
+sozu -c /etc/config.toml metrics get&quot;
+sozu -c /etc/config.toml clusters list&quot;
+sozu -c /etc/config.toml state save -f &quot;sozu-state-$(date -Iseconds).txt&quot;
+</code></pre>
+<h3 id="_2">日志记录</h3>
+<p>有三个与日志记录相关的配置选项：</p>
+<ul>
+<li><code>log_level</code>：设置日志记录的详细程度</li>
+<li><code>log_target</code>：日志发送到的位置。它可以有以下格式：</li>
+<li><code>stdout</code></li>
+<li><code>udp://127.0.0.1:9876</code></li>
+<li><code>tcp://127.0.0.1:9876</code></li>
+<li><code>unix:///var/sozu/logs</code></li>
+<li><code>file:///var/logs/sozu.log</code></li>
+<li><code>access_logs_target</code>：如果激活，则将访问日志发送到单独的目标</li>
+</ul>
+<p><code>log_level</code> 遵循 <a href="https://docs.rs/env_logger/0.5.13/env_logger/">env_logger 的级别指令</a>。
+此外，可以使用 <code>RUST_LOG</code> 环境变量覆盖日志级别。</p>
+<p>如果 sozu 是在发布模式下构建的，则不会编译 <code>DEBUG</code> 和 <code>TRACE</code> 日志级别，
+除非您设置了编译功能 <code>logs-debug</code> 和 <code>logs-trace</code>。</p>
+<h3 id="_3">指标</h3>
+<p>sozu 运行时会生成各种指标。可以通过两种方式访问它们：</p>
+<ul>
+<li>通过 <code>sozu metrics get</code>，它将显示主进程和工作进程的指标。计数器在每次调用之间刷新</li>
+<li>通过 UDP，遵循 statsd 协议（可选地支持 InfluxDB 的标签）</li>
+</ul>
+<p>以下是如何在配置文件中使用 statsd 设置指标：</p>
+<pre><code class="language-toml">[metrics]
+address = &quot;127.0.0.1:8125&quot;
+# 使用 InfluxDB 的 statsd 协议风格添加标签（默认为 false）
+tagged_metrics = true
+# 指标键前缀（默认为 sozu）
+# prefix = &quot;sozu&quot;
+</code></pre>
+<h2 id="_4">要关注的图表和指标</h2>
+<p>（假设我们将 <code>sozu</code> 设置为指标前缀）</p>
+<h3 id="_5">跟踪有效流量</h3>
+<h4 id="_6">访问日志</h4>
+<p>访问日志具有以下格式：</p>
+<pre><code class="language-txt">2018-09-21T14:01:51Z 821136800672570 71013 WRK-00 INFO  450b071a-53b8-4fd7-b2f2-1213f03ef032 MyCluster      127.0.0.1:52323 -&gt; 127.0.0.1:1027       241ms 855μs 560 33084   200 OK lolcatho.st:8080 GET /
+</code></pre>
+<p>从左到右：</p>
+<ul>
+<li>ISO8601 格式的日期，UTC 时区</li>
+<li>单调时钟（以防某些消息顺序错误）</li>
+<li>PID</li>
+<li>工作进程名称（主进程为“MAIN”）</li>
+<li>日志级别</li>
+<li>请求 ID（UUID，为每个请求随机生成，如果在 keep-alive 中执行多个请求，则在同一连接上会更改）</li>
+<li>集群 ID</li>
+<li>客户端的源 IP 和端口</li>
+<li>后端服务器的目标 IP 和端口</li>
+<li>响应时间（从客户端接收到的第一个字节到发送给客户端的最后一个字节）</li>
+<li>服务时间（sozu 处理会话所花费的时间）</li>
+<li>上传的字节数</li>
+<li>下载的字节数</li>
+</ul>
+<h4 id="http">HTTP 状态指标</h4>
+<p>以下指标跟踪正确发送到后端服务器的请求：</p>
+<ul>
+<li><code>sozu.http.status.1xx</code>：计算状态为 100 到 199 的请求</li>
+<li><code>sozu.http.status.2xx</code>：计算状态为 200 到 299 的请求</li>
+<li><code>sozu.http.status.3xx</code>：计算状态为 300 到 399 的请求</li>
+<li><code>sozu.http.status.4xx</code>：计算状态为 400 到 499 的请求</li>
+<li><code>sozu.http.status.5xx</code>：计算状态为 500 到 599 的请求</li>
+<li><code>sozu.http.requests</code>：每个请求递增（上述计数器的总和）</li>
+</ul>
+<h4 id="_7">传输的数据</h4>
+<p>有全局的 <code>sozu.bytes_in</code> 和 <code>sozu.bytes_out</code> 指标，用于计算
+sozu 的前端流量。
+这些指标也可以具有后端 ID 和集群 ID。然后它们将从
+后端服务器的角度指示传入和传出的字节。</p>
+<h4 id="_8">响应时间</h4>
+<p>?</p>
+<h4 id="_9">协议</h4>
+<p>客户端会话可以处于其网络协议的各种状态。例如，一个连接
+可以从“期望代理协议”（假设前面有一个 TCP 代理）到 TLS 握手，
+到 HTTPS，到 WSS（基于 TLS 的 websocket）。</p>
+<p>您可以跟踪以下仪表，指示当前的协议使用情况：</p>
+<ul>
+<li><code>sozu.protocol.proxy.expect</code></li>
+<li><code>sozu.protocol.proxy.send</code></li>
+<li><code>sozu.protocol.proxy.relay</code></li>
+<li><code>sozu.protocol.tcp</code></li>
+<li><code>sozu.protocol.tls.handshake</code></li>
+<li><code>sozu.protocol.http</code></li>
+<li><code>sozu.protocol.https</code></li>
+<li><code>sozu.protocol.ws</code></li>
+<li><code>sozu.protocol.wss</code></li>
+</ul>
+<h3 id="_10">跟踪失败的请求</h3>
+<p>Sozu 有一种以最少的资源使用来响应无效流量的方法，发送预定义的答案。
+它对无效流量（不符合标准）和路由问题（未知主机和/或路径，
+无响应的后端服务器）执行此操作。</p>
+<p><code>sozu.http.errors</code> 计数器是失败请求的总和。它包含以下内容：</p>
+<ul>
+<li><code>sozu.http.frontend_parse_errors</code>：sozu 收到了一些无效的流量</li>
+<li><code>sozu.http.400.errors</code>：无法解析主机名</li>
+<li><code>sozu.http.404.errors</code>：未知的主机名和/或路径</li>
+<li><code>sozu.http.413.errors</code>：请求太大</li>
+<li><code>sozu.http.503.errors</code>：无法连接到后端服务器，或相应集群没有可用的后端服务器</li>
+</ul>
+<p>更进一步，后端连接问题由以下指标跟踪：</p>
+<ul>
+<li><code>sozu.backend.connections.error</code>：无法连接到后端服务器</li>
+<li><code>sozu.backend.down</code>：重试策略已触发并将后端服务器标记为关闭</li>
+</ul>
+<p><code>sozu.http.503.errors</code> 指标在请求发回 503 错误后递增，并且在
+断路器触发后（我们等待 3 次连接后端服务器失败）发送 503 错误。</p>
+<p>后端连接错误将导致以下日志消息：</p>
+<pre><code class="language-txt">2018-09-21T14:36:08Z 823194694977734 71501 WRK-00 ERROR 839f592b-a194-4c3b-848b-8ef024129969    MyCluster    error connecting to backend, trying again
+</code></pre>
+<p>断路器触发将把此内容写入日志：</p>
+<pre><code class="language-txt">2018-09-21T14:36:57Z 823243245414405 71524 WRK-00 ERROR 7029d66e-57a8-406e-ae61-e4bf9ff7b6b8    MyCluster    max connection attempt reached
+</code></pre>
+<p>重试策略将后端服务器标记为关闭将写入以下日志消息：</p>
+<pre><code class="language-txt">2018-09-21T14:37:31Z 823277868708804 71524 WRK-00 ERROR no more available backends for cluster MyCluster
+</code></pre>
+<h3 id="_11">可伸缩性</h3>
+<p>Sozu 精细地处理其资源使用，并对请求数量
+或内存使用设置硬性限制。</p>
+<p>要跟踪连接，请关注以下仪表：</p>
+<ul>
+<li><code>sozu.client.connections</code> 用于前端连接</li>
+<li><code>sozu.backend.connections</code> 用于后端连接</li>
+<li><code>sozu.http.active_requests</code> 用于当前活动的连接（等待
+下一个请求的 keep-alive 连接被标记为不活动）</li>
+</ul>
+<p>客户端连接应始终高于后端连接，而后端连接应高于
+活动请求（不活动的会话可以保留后端连接）。</p>
+<p>这些指标与资源使用密切相关，后者由以下指标跟踪：</p>
+<ul>
+<li><code>sozu.slab.entries</code>：slab 分配器中使用的插槽数。通常，每个监听器套接字有一个插槽，
+一个用于连接到主进程，一个用于指标套接字，然后每个前端连接一个，
+每个后端连接一个。因此，连接数应始终接近（但低于）slab 计数。</li>
+<li><code>sozu.buffer.number</code>：缓冲池中使用的缓冲区数。不活动的会话和我们发送
+默认答案（400、404、413、503 HTTP 错误）的请求不使用缓冲区。活动的 HTTP 会话使用一个缓冲区（
+流水线模式除外），WebSocket 会话使用两个缓冲区。因此，缓冲区数应始终低于
+slab 计数，并低于连接数。</li>
+<li><code>sozu.zombies</code>：sozu 集成了一个僵尸会话检查器。如果某个会话一段时间内没有任何操作，
+则事件循环或协议实现中可能存在错误，因此会记录其内部状态。此计数器
+为每个被删除的僵尸会话递增。</li>
+</ul>
+<p>新连接被放入队列中，并等待直到会话被创建（如果我们有可用资源），
+或直到配置的超时已过。以下指标观察接受队列的使用情况：</p>
+<ul>
+<li><code>sozu.accept_queue.connections</code>：接受队列中的套接字数</li>
+<li><code>sozu.accept_queue.timeout</code>：每次套接字在队列中停留时间过长并被关闭时递增</li>
+<li><code>sozu.accept_queue.wait_time</code>：每次创建会话时，此指标记录套接字在接受队列中必须等待多长时间</li>
+</ul>
+<h3 id="tls">TLS 特定信息</h3>
+<p>TLS 版本计数器：</p>
+<ul>
+<li><code>sozu.tls.version.SSLv2</code></li>
+<li><code>sozu.tls.version.SSLv3</code></li>
+<li><code>sozu.tls.version.TLSv1_0</code></li>
+<li><code>sozu.tls.version.TLSv1_1</code></li>
+<li><code>sozu.tls.version.TLSv1_2</code></li>
+<li><code>sozu.tls.version.TLSv1_3</code></li>
+<li><code>sozu.tls.version.Unknown</code></li>
+</ul>
+<p>Rustls 特定的协商密码套件：</p>
+<ul>
+<li><code>sozu.tls.cipher.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</code></li>
+<li><code>sozu.tls.cipher.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</code></li>
+<li><code>sozu.tls.cipher.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</code></li>
+<li><code>sozu.tls.cipher.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</code></li>
+<li><code>sozu.tls.cipher.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</code></li>
+<li><code>sozu.tls.cipher.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</code></li>
+<li><code>sozu.tls.cipher.TLS13_CHACHA20_POLY1305_SHA256</code></li>
+<li><code>sozu.tls.cipher.TLS13_AES_256_GCM_SHA384</code></li>
+<li><code>sozu.tls.cipher.TLS13_AES_128_GCM_SHA256</code></li>
+<li><code>sozu.tls.cipher.Unsupported</code></li>
+</ul>
+<h2 id="_12">经典错误场景</h2>
+<h3 id="_13">路由问题</h3>
+<p>正常流量 (<code>sozu.http.requests</code>) 下降，而 404 (<code>sozu.http.404.errors</code>) 和
+503 (<code>sozu.http.503.errors</code>) 增加，这意味着 sozu 的配置可能有问题。
+使用以下命令检查配置状态：</p>
+<pre><code class="language-bash">sozu -c /etc/config.toml clusters list
+</code></pre>
+<p>并且，对于特定集群 ID 的完整配置：</p>
+<pre><code class="language-bash">sozu -c /etc/config.toml clusters list -i cluster_id
+</code></pre>
+<h3 id="_14">后端服务器不可用</h3>
+<p><code>sozu.http.503.errors</code> 增加，大量的 <code>sozu.backend.connections.error</code> 和
+<code>sozu.backend.down</code> 记录：后端服务器已关闭。
+检查日志中是否有 <code>error connecting to backend, trying again</code> 和 <code>no more available backends for cluster &lt;cluster_id&gt;</code>
+以找出受影响的集群</p>
+<h3 id="_15">僵尸</h3>
+<p>如果 <code>sozu.zombies</code> 指标触发，这意味着存在事件循环或协议实现
+错误。日志应包含被终止的会话的内部状态。请复制这些
+日志并向 sozu 提交问题。</p>
+<p>它通常伴随着 <code>sozu.slab.entries</code> 增加，而连接数或活动请求数
+保持不变。然后当僵尸检查器激活时，slab 计数将下降。</p>
+<h3 id="_16">无效的会话关闭</h3>
+<p>如果 slab 计数和活动请求保持不变，但 <code>sozu.client.connections</code> 和/或 <code>sozu.backend.connections</code>
+正在增加，这意味着 sozu 没有正确关闭会话，请为此提交问题。
+（如果 slab 计数保持不变，套接字仍应正确关闭）</p>
+<h3 id="_17">接受队列填满</h3>
+<p>如果 <code>sozu.accept_queue.connections</code> 正在增加，这意味着接受队列正在填满，因为 sozu 处于
+高负载下（在健康负载下，此队列几乎总是空的）。<code>sozu.accept_queue.wait_time</code> 也应该增加
+。如果 <code>sozu.accept_queue.timeout</code> 高于零，sozu 无法足够快地接受会话并且
+正在拒绝流量。</p>
+<h2 id="_18">开发期间</h2>
+<p>在 config.toml 文件中：</p>
+<ul>
+<li>如果错误仅影响其中一个协议（HTTP、HTTPS 或 TCP），请停用其他协议</li>
+<li>将 <code>worker_count</code> 设置为 1 以避免日志中出现重复</li>
+<li>调试 panic：</li>
+<li>使用 <code>RUST_BACKTRACE=1</code> 启动 sozu</li>
+<li>将 <code>worker_automatic_restart</code> 设置为 false（以便 sozu 可以立即停止）</li>
+</ul>
+<h3 id="_19">跟踪指标</h3>
+<p><a href="https://github.com/geal/grad">grad 指标工具</a> 的开发是为了轻松聚合 statsd
+指标并显示它们。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
