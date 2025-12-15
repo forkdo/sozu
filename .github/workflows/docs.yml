@@ -1,0 +1,63 @@
+name: Documentation
+
+on:
+  push:
+    branches:
+      - docs
+    paths:
+      - 'docs_zh/**'
+      - 'zensical.toml'
+      - '.github/workflows/docs.yml'
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.x
+      - run: pip install zensical
+      - run: zensical build --clean
+
+      ### SSH Server WEB
+      - name: Set up SSH
+        uses: LuisEnMarroquin/setup-ssh-action@v3.0.0
+        with:
+          ORIGIN: ${{ secrets.SSH_HOSTNAME }}
+          SSHKEY: ${{ secrets.SSH_KEY }}
+          NAME: webserver
+          PORT: ${{ secrets.SSH_PORT }}
+          USER: ${{ secrets.SSH_USERNAME }}
+      - run: echo "" >> ~/.ssh/access  # fix
+      - name: Deploy the website
+        env: 
+          WEBROOT: /data/wwwroot/sozu
+        run: |
+          ssh webserver "rm -rf $WEBROOT && mkdir -p $WEBROOT"
+          scp -r site/* webserver:${WEBROOT}
+
+      ### GitHub Pages
+      - run: cp CNAME site/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment
+
+      - name: Deploy to Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
