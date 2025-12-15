@@ -50,25 +50,25 @@ docs_dir = "docs_zh"
 #
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
-    { title = "首页", path = "README.md" },
-    { title = "介绍", children = [
-        { title = "入门", path = "getting_started.md" },
-        { title = "配置 Sōzu", path = "configure.md" },
-        { title = "如何使用", path = "how_to_use.md" },
-        { title = "命令行配置", path = "configure_cli.md" },
-        { title = "为什么你应该使用 Sōzu", path = "why_you_should_use.md" },
-        { title = "设计动机", path = "design_motivation.md" },
-        { title = "技巧", path = "recipes.md" },
+    { "首页" = "README.md" },
+    { "介绍" = [
+        { "入门" = "getting_started.md" },
+        { "配置 Sōzu" = "configure.md" },
+        { "如何使用" = "how_to_use.md" },
+        { "命令行配置" = "configure_cli.md" },
+        { "为什么你应该使用 Sōzu" = "why_you_should_use.md" },
+        { "设计动机" = "design_motivation.md" },
+        { "技巧" = "recipes.md" },
     ]},
-    { title = "概述", children = [
-        { title = "架构概述", path = "architecture.md" },
-        { title = "工具和库", path = "tools_libraries.md" },
+    { "概述" = [
+        { "架构概述" = "architecture.md" },
+        { "工具和库" = "tools_libraries.md" },
     ]},
-    { title = "深入", children = [
-        { title = "会话的生命周期", path = "lifetime_of_a_session.md" },
-        { title = "调试策略", path = "debugging_strategies.md" },
-        { title = "基准测试", path = "benchmark.md" },
-        { title = "词汇表", path = "lexicon.md" },
+    { "深入" = [
+        { "会话的生命周期" = "lifetime_of_a_session.md" },
+        { "调试策略" = "debugging_strategies.md" },
+        { "基准测试" = "benchmark.md" },
+        { "词汇表" = "lexicon.md" },
     ]},
 ]
 
